@@ -4,8 +4,7 @@ const task = () => {
 
     function loadGenerator() {
         let i = 0, x = [];
-        console.log('.')
-        let max = 10000;
+        let max = 100000;
         for(i= 0; i< max; i++){
             x.push('Power generation ', Math.pow(i))
             x.push('Sqrt generation ', Math.sqrt(i))
@@ -14,14 +13,14 @@ const task = () => {
 
     emitter.addListener('ping', loadGenerator)
 
-    let intevalTime = 50;
+    let intevalTime = 100;
     let interval = setInterval(function requestWork() {
         emitter.emit('ping')
     }, intevalTime)
 
     setTimeout(function () {
         clearInterval(interval)
-    }, 10000)
+    }, 200000)
 }
 
 
