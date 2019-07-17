@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "eventBlockExpress",
+      "script": "server.js",
+      "instances": 1,
+      "merge_logs": true,
+      "env": {
+        "NSOLID_COMMAND": "18.184.234.68:9001",
+        "NSOLID_APPNAME": "eventBlockExpress"
+      },
+      "interpreter": "/usr/local/nsolid/bin/nsolid"
+    }
+  ]
+}

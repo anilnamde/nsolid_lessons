@@ -19,15 +19,17 @@ app.get('/countToN', (req, res) => {
 });
 
 
-app.get('/countToN2', (req, res) => {
-    let n = req.query.n;
-
-    // n^2 iterations before giving someone else a turn
+function addedExtraDelay(n) {
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
             console.log(`Iter ${i}.${j}`);
         }
     }
+}
+
+app.get('/countToN2', (req, res) => {
+    // n^2 iterations before giving someone else a turn
+    addedExtraDelay(req.query.n);
 
     res.sendStatus(200);
 });

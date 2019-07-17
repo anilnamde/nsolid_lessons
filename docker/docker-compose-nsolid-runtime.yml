@@ -1,0 +1,20 @@
+# nsolid.yml
+
+version: "2"
+services:
+  console:
+    image: nodesource/nsolid-console
+    container_name: nsolid.console
+    ports:
+      - 9006:9001
+      - 9007:9002
+      - 9008:9003
+      - 6754:6753
+    environment:
+      - NSOLID_CONSOLE_LICENSE_KEY={NSOLID_CONSOLE_LICENSE_KEY}
+    volumes:
+      - /Users/a.namde/Workspace/nsolid_lessons/docker/logs:/var/lib/nsolid/console
+    networks:
+      - nsolid
+networks:
+  nsolid:

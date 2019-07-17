@@ -1,0 +1,19 @@
+# docker-compose.yaml
+
+version: "2"
+services:
+  example:
+    image: example
+    container_name: nsolid.example
+    ports:
+      - 8888:3000 # Port your application exposes
+    environment:
+      - NSOLID_APPNAME=example
+      - NSOLID_COMMAND=console:9006
+      - NSOLID_DATA=console:9007
+      - NSOLID_BULK=console:9008
+    networks:
+      - nsolid
+networks:
+  nsolid:
+
